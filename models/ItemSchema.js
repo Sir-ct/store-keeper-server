@@ -11,15 +11,19 @@ const ItemSchema = new mongoose.Schema({
     item_imageurl: {
         type: String,
     },
-    cost_price: {
+    price: {
         type: Number,
         required: true
     },
     quantity_in_stock: {
         type: Number,
-        required: true
+        default: 0
     },
-    quantity_sold: {
+    total_quantity_bought:{
+        type: Number,
+        default: 0
+    },
+    total_quantity_sold: {
         type: Number,
         default: 0
     },

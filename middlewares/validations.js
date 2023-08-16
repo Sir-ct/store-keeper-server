@@ -6,8 +6,7 @@ async function addItemValidation(req, res, next){
         item_name: Joi.string().required(),
         item_description: Joi.string(),
         item_imageurl: Joi.string(),
-        cost_price: Joi.number().required(),
-        quantity_in_stock: Joi.number().required(),
+        price: Joi.number().required(),
         in_store_location: Joi.string().required()
     })
 
