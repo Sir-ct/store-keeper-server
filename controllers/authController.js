@@ -12,7 +12,7 @@ async function login(req, res){
 
     let token = Jwt.sign({id: user.id, username: user.username}, process.env.JWT_SECRET, {expiresIn: '24h'})
 
-    return res.status(200).json({error: false, message: "logged in successfully", data: {...user, token}})
+    return res.status(200).json({error: false, message: "logged in successfully", data: {user, token}})
 }
 
 module.exports = {login}

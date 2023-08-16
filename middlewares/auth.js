@@ -17,7 +17,7 @@ async function isUserAuthenticated(req, res, next){
 
 async function isUserAdmin(req, res, next){
     let user = await getUserById(req.user.id)
-    if(user?.role !== 'admin') return res.status(403).json({error: true, message: "user is not authorized", data: null})
+    if(user?.user_role !== 'admin') return res.status(403).json({error: true, message: "user is not authorized", data: null})
 
     next()
 }

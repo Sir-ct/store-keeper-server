@@ -1,0 +1,23 @@
+@currenttoken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGM4NGFmODI3NWY5OTBjZGM1ODMzZCIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2OTIxNzM3MTIsImV4cCI6MTY5MjI2MDExMn0.s-Yqv4krhnsKWAS_qUhfkPNwdkIJTTDbLzkwoww2Bew
+@baseurl = http://localhost:6000
+POST {{baseurl}}/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "storeadmin"
+}
+
+###
+
+GET {{baseurl}}/items/getallitems
+sk-token: {{currenttoken}}
+
+###
+
+GET {{baseurl}}/items/getoneitem/id
+sk-token: {{currenttoken}}
+
+###
+GET {{baseurl}}/items/additem

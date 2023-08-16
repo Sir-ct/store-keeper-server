@@ -15,12 +15,13 @@ const ItemSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    quantity: {
+    quantity_in_stock: {
         type: Number,
         required: true
     },
-    quantity_remaining: {
-        type: Number
+    quantity_sold: {
+        type: Number,
+        default: 0
     },
     in_store_location: {
         type: String
@@ -36,7 +37,8 @@ const ItemSchema = new mongoose.Schema({
         default: Date.now()
     },
     last_updated: {
-        type: Date
+        type: Date,
+        detault: Date.now()
     }
 })
 
